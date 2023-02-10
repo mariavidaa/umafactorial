@@ -1,0 +1,116 @@
+Actividad Individual
+
+%Item1
+//En primer lugar hay que clonar el repositorio que hemos creado en la cuenta de GitHub "umafactorial" y para ello usamos el comando git clone <URL>
+git clone https://github.com/mariavidaa/umafactorial.git
+
+%Item2
+//creamos el fichero factorial.java y lo guardamos en el repositorio umafactorial
+
+%Item3
+//Añadimos el fichero a la rama main en un commit. Usamos el comando git add <file> para añadir el fichero y git commit -m <mensaje>
+git add factorial.java
+git commit -m "implementacion inicial"
+
+%Item4
+//Modificamos el archivo factorial y los añadimos en un nuevo commit
+git add factorial.java
+git commit -m "refactorizacion"
+
+%Item5
+// Subimos la rama main al repositorio de GitHub con el comando git push origin <rama>
+git push origin main
+// Creamos una nueva rama con el comando git branch <rama> y nos cambiamos a ella git checkout <rama>
+git branch recursivo
+git checkout recursivo
+
+%Item6
+//Modificamos el fichero
+
+%Item7
+//Añadimos la modificacion en un nuevo commit y subimos la rama al repositorio de GitHub
+git add factorial.java
+git commit -m "implementacion recursiva"
+git push origin recursivo
+
+%Item8
+//Cambiamos a la rama main para realizar cambios en el fichero
+git checkout main
+
+%Item9
+//Añadimos los cambios
+git add factorial.java 
+
+%Item10
+//Los cambios son añadidos en un nuevo commit y subimos la rama main al repositorio de GitHub
+git commit -m "correccion numeros negativos"
+git push origin main
+
+%Item11
+//Tenemos que hacer una modificacion en el fichero de la rama recursivo, nos cambiamos a ella. Subimos el fichero en un nuevo commit
+git checkout recursivo
+git add factorial.java
+git commit -m "optimizacion"
+
+%Item12
+//Volvemos a la rama main y mezclamos los cambios de la rama recursivo con el comando git marge <rama>
+git checkout main
+git merge recursivo
+//Nos sale el siguiente comentario "please enter a commit message" presionamos: i+esc+type(:wq)+press(enter)
+
+//Se ha se mejorado la apariencia del fichero del codigo y se crea un nuevo commit en main para añadir los cambios
+
+%Item13
+//Tenemos que modificar el fichero en una nueva rama refacIO, usamos el comando git checkout -b <rama> para cambiarnos directamente a ella. Cmabiamos el fichero y lo añadimos en un nuevo commit. 
+git checkout -b refacIO
+git add factorial.java
+git commit -m "refactorizacion de metodo de entrada"
+
+%Item14
+//hemos modificado el fichero java pero no hemos añadido los cambios en un nuevo commit porque se nos pide cambiar de rama.
+
+%Item15
+//Se nos pide guardar temporalmente los cambio y para ello usamos el comando git stash, cambiamos de rama y modificamos el fichero de la rama main
+git stash
+git checkout main
+//modificamos el fichero de java
+
+%Item16
+//Añadimos los cambio en un nuevo commit
+git add factorial.java
+git commit -m "cambio de long a Big Integer"
+//Enviamos los cambios al repositorio de gitHub
+git push origin main
+//cambiamos den uevo a la rama refacIO y recuperamos los cambios con el comando git stash pop
+git checkout refacIO
+git stash pop
+//añadimos los cambio en un nuevo commit
+git add factorial.java
+git commit -m "refactorizacion de metodo salida"
+
+%Item17
+//cambiamos a la rama main y mezclamos la rama refacIO
+git checkout main
+git merge refacIO
+//obtenemos un "conflicto"
+
+%Item18
+//modificamos el archivo factorial.java para eliminar los conflictos
+
+%Item19
+//añadimos el fichero en un nuevo commit
+git add factorial.java
+git commit -m "mezcla de rama refacIO"
+//enviamos los cambios al repositorio de GitHub
+git push origin main
+
+%Item20
+//Creamos el fichero de texto con los comandos y lo añadimos en un nuevo commit
+
+%Item21
+//Añadimos el fichero de texto con los comandos en un nuevo commit
+git add comandos-git.txt
+git commit -m "adicion de historial de comandos"
+
+//sincronizamos las ramas del repositorio local con las del repositorio de GitHUb.
+git push --all origin
